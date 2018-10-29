@@ -89,4 +89,62 @@ per4.greeting();
 per5.greeting();
 
 
+//inheritance
+class Vehicle {
+    constructor(manufacturer, wheels) {
+        this.manufacturer = manufacturer;
+        this.wheels = wheels;
+    }
+
+    aboutVehicle(manufacturer, wheels) {
+        console.log(`This is a vehicle made by ${this.manufacturer}. It has ${this.wheels} wheels.`);
+    }
+}
+
+class Truck extends Vehicle {
+    constructor(manufacturer, wheels, doors, bed) {
+        super(manufacturer, wheels);
+        this.doors = doors;
+        this.bed = bed;
+        let bed = true;
+    }
+
+    aboutVehicle(manufacturer, wheels, doors) {
+        console.log(`This is a Truck made by ${this.manufacturer}. It has ${this.wheels} wheels and ${this.doors} doors.`);
+    }
+}
+
+
+class Sedan extends Vehicle {
+    constructor(manufacturer, wheels, doors, size, mpg) {
+        super(manufacturer, wheels);
+        this.doors = doors;
+        this.size = size;
+        this.mpg = mpg;
+    }
+
+    aboutVehicle(manufacturer, wheels, doors, size, mpg) {
+        console.log(`This is a sedan made by ${this.manufacturer}. It has ${this.wheels} wheels and ${this.doors} doors. It is ${this.size} size and gets ${this.mpg} mpg.`);
+    }
+}
+
+
+class Motorcycle extends Vehicle {
+    constructor(manufacturer, wheels, doors) {
+    super(manufacturer, wheels);
+    this.doors = doors;
+    //this.handlebars = handlebars;
+    }
+
+    aboutVehicle(manufacturer, wheels, doors) {
+        console.log(`This is a motorcycle made by ${this.manufacturer}. It has ${this.wheels} wheels and ${this.doors} doors.`);
+    }
+}
+
+
+v1 = new Motorcycle('Honda', '2', '0');
+v1.aboutVehicle();
+v2 = new Sedan('Honda', '4', '4', 'midsize', '32');
+v2.aboutVehicle();
+
 
